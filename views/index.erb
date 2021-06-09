@@ -1,0 +1,36 @@
+<h1>Welcome to Jimmy's Intergalactic Planetarium</h1>
+<% if resultsArr.length == 0%>
+    <div class="NoData">
+        <h2>There is no Planet Data</h2>
+        <p>Please use the add button to add Planets</p>
+    </div>
+<% elsif  %>
+    <div class='planets-grid'>
+        <% planets.each do|space_rock|%>
+             <div class='planet'>
+                <a href="/planets/<%= space_rock["id"] %>"> <img src = "<%= space_rock["image_url"] %>"> </a>
+                 <h3><%= space_rock["name"] %></h3>
+                 <p><%= space_rock["diameter"] %> km</p>
+                 <p><%= space_rock["distance"] %> km</p>
+                 <p>Weight <%= space_rock["mass"]%>kg</p>
+                <p>Moon Count: <%= space_rock["moon_count"] %></p>
+
+
+                <div class="buttons">
+                    <form class="edit_but" action="/planets/<%=space_rock["id"]%>/edit">
+                        <input type="submit" value="edit">
+                    </form>
+        
+                    <form class="del_but" action="/planets/<%=space_rock["id"]%>/delete" method="POST">
+                        <input type="hidden" name="_method" value="DELETE"/>
+                        <input type="submit" value="delete">
+                    </form>
+                </div>
+            </div>
+    <% end%>
+<% end%>
+
+        <form class="create_but" action="/planets/create">
+            <input type="submit" value="Add Another Planet">
+        </form>
+    </div>

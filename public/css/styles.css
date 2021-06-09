@@ -1,0 +1,52 @@
+body {
+   background-image: url('https://papers.co/wallpaper/papers.co-bd94-minimal-space-art-illustration-40-wallpaper.jpg');
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+
+}
+
+.addPlanetForm {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: auto;
+
+
+}
+.planets-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    max-width: 1000px;
+    gap: 50px;
+    margin: auto;
+    text-align: center;
+}
+
+.planet {
+background-color: whitesmoke;
+color: teal;
+border-radius: 10px;
+
+}
+
+img {
+
+    width: 300px;
+    height: auto;
+}
+
+.buttons {
+
+    display:inline-block
+}
+
+.del_but, .edit_but {
+    display: inline;
+}
+

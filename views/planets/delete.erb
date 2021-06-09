@@ -1,0 +1,24 @@
+<form action="<%= action %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    
+    <label for="name">
+        Name:
+    </label>
+    <input name="name" value="<%= item["name"] %>"/>
+
+    <label for="price">
+        Price:
+    </label>
+    <input name="price" value="<%= item["price"] %>" />
+
+    <label for="image_url">
+        Image Url:
+    </label>
+    <input name="image_url" value="<%= item["image_url"] %>" />
+
+    <% button_value = "Add food" %>
+    <% if edit %>
+    <%     button_value = "Update" %>
+    <% end %>
+    <input type="submit" value="<%= button_value %>" />
+</form>
